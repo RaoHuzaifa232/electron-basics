@@ -1,9 +1,31 @@
 {
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "A simple Electron desktop app",
+  "author": "Rao Huzaifa",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-builder",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.example.electronapp",
+    "productName": "MyElectronApp",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    }
   },
   "devDependencies": {
-    "electron": "^38.3.0"
+    "electron": "^38.3.0",
+    "electron-builder": "^26.0.12"
   }
 }
